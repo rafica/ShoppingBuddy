@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ShoppingBuddy</string>
+    <string name="add_list_item">Add item</string>
+    <string name="search_location">Search Stores</string>
+	<string name="drawer_open">Open drawer</string>
+	<string name="drawer_close">Close drawer</string>
+</resources>
