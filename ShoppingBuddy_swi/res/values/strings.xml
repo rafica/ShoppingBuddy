@@ -15,4 +15,5 @@
         <item>Medication</item>
         <item>Household Appliances</item>
     </string-array>
+    <string name="title_activity_add_item_to_list">AddItemToListActivity</string>
 </resources>

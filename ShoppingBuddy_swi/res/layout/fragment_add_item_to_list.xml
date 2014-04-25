@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
         android:text="@string/add_item_button_text" 
-        android:onClick="sendMessage"/>
+        />
 
     <Spinner
         android:id="@+id/category_spinner"
