@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
          <activity
-            android:name="com.example.shoppingbuddy.AddItemToListActivity"
+            android:name="com.buddy.AddItemToListActivity"
             android:label="@string/title_activity_add_item_to_list" >
         </activity>
     </application>
