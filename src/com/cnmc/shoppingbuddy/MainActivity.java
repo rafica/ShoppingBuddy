@@ -3,6 +3,7 @@ package com.cnmc.shoppingbuddy;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -10,13 +11,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 public class MainActivity extends FragmentActivity {
 	private DrawerLayout mDrawerLayout;
@@ -181,14 +183,20 @@ public class MainActivity extends FragmentActivity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		
+			System.out.println("Menu item clicked");
+			System.out.println("Received id:"+item.getItemId());
+			System.out.println("R id"+R.id.add_list);
 	        // Pass the event to ActionBarDrawerToggle, if it returns
 	        // true, then it has handled the app icon touch event
-	        if (mDrawerToggle.onOptionsItemSelected(item)) {
-	          return true;
-	        }
-	        // Handle your other action bar items...
 
+	        // Handle your other action bar items...
+	        if (item.getItemId()==R.id.add_list){
+	        	  System.out.println("reached");
+	        	  System.out.println("starting new activity");
+	        	  Intent intent=new Intent(this,AddItemToListActivity.class);
+	        	  startActivity(intent);
+	        	  return true;
+	          }
 	        return super.onOptionsItemSelected(item);
 	    
 	}

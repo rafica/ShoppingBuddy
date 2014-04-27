@@ -2,7 +2,7 @@ package com.cnmc.shoppingbuddy;
 
 import java.util.List;
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 import android.app.Activity;
 import android.content.Context;

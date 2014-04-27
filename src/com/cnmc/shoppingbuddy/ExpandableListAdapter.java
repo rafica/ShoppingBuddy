@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
  
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 import android.content.Context;
 import android.graphics.Typeface;

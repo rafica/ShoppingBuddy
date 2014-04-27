@@ -15,7 +15,7 @@ import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.Toast;
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 public class UserHomeFragment extends Fragment {
 	ExpandableListAdapter listAdapter;

@@ -3,7 +3,7 @@ package com.cnmc.shoppingbuddy;
 import java.util.ArrayList;
 
 import com.cnmc.shoppingbuddy.AddedListDisplayFragment.AddedListNameStatus;
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;
