@@ -10,4 +10,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 	<string name="add_item_activity">Add Item Activity</string>
+	<string name="add_item_button_text">Add an Item</string>
+	<string name="category_prompt">Choose a category</string>
+    <string-array name="category_array">
+        <item>Groceries</item>
+        <item>Clothing</item>
+        <item>Electronics</item>
+        <item>Medication</item>
+        <item>Household Appliances</item>
+    </string-array>
+	
 </resources>
