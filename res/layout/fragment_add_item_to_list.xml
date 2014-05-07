@@ -9,7 +9,7 @@
     tools:context="com.cnmc.shoppingbuddy.AddItemToListActivity$PlaceholderFragment" >
 
     
-    <Button
+   <!--  <Button
         android:id="@+id/AddItemButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,9 +17,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
         android:text="@string/add_item_button_text" 
-        />
+        /> -->
 
-    <Spinner
+  <!--   <Spinner
         android:id="@+id/category_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,5 +28,12 @@
         android:layout_marginTop="132dp"
         android:entries="@array/category_array"
         android:prompt="@string/category_prompt" />
+ -->
+   	 <ExpandableListView
+        android:id="@+id/shoppingExpListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true" >
+    </ExpandableListView>
 
 </RelativeLayout>
