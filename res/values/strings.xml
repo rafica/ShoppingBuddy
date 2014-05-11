@@ -31,4 +31,8 @@
 	<string name="default_textview">Unable to load text</string>
 	<string name="itemText">Item Default Text</string>
 	<string name="enter_custom_item_name">Enter Item Name</string>
+	<string name="get_started">To get started, log in using Facebook</string>
+	<string name="app_id">523625137743756</string>
+	
+	
 </resources>
