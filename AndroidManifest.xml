@@ -26,6 +26,14 @@
             android:name="com.cnmc.shoppingbuddy.AddItemToListActivity"
             android:label="@string/title_activity_add_item_to_list" >
         </activity>
+        <activity
+            android:name="com.cnmc.shoppingbuddy.SelectListActivity"
+            android:label="@string/title_activity_select_list" >
+        </activity>
+        <activity
+            android:name="com.cnmc.shoppingbuddy.DetailViewActivity"
+            android:label="@string/title_activity_detail_view" >
+        </activity>
     </application>
 
 </manifest>
