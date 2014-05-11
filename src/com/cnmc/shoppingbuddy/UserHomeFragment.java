@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,13 +33,14 @@ public class UserHomeFragment extends Fragment {
 		// get the listview
 		expListView = (ExpandableListView) userHomeLayout
 				.findViewById(R.id.lvExp);
-
+		
 		// Listview on child click listener
 		expListView.setOnChildClickListener(new OnChildClickListener() {
 
 			@Override
 			public boolean onChildClick(ExpandableListView parent, View v,
 					int groupPosition, int childPosition, long id) {
+
 				Toast.makeText(
 						getActivity(),
 						listDataHeader.get(groupPosition)
@@ -78,7 +80,7 @@ public class UserHomeFragment extends Fragment {
 		prepareListData();
 
 		listAdapter = new ExpandableListAdapter(getActivity(), listDataHeader,
-				listDataChild);
+				listDataChild,"home");
 
 		// setting list adapter
 		expListView.setAdapter(listAdapter);

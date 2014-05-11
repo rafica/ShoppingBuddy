@@ -31,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <service android:name="com.cnmc.shoppingbuddy.GCMIntentService" />
 
@@ -63,6 +64,19 @@
                 <!-- <action android:name="android.intent.action.MAIN" /> -->
 
             </intent-filter>
+=======
+        <activity
+            android:name="com.cnmc.shoppingbuddy.AddItemToListActivity"
+            android:label="@string/title_activity_add_item_to_list" >
+        </activity>
+        <activity
+            android:name="com.cnmc.shoppingbuddy.SelectListActivity"
+            android:label="@string/title_activity_select_list" >
+        </activity>
+        <activity
+            android:name="com.cnmc.shoppingbuddy.DetailViewActivity"
+            android:label="@string/title_activity_detail_view" >
+>>>>>>> nikhil_branch_shopping_buddy
         </activity>
     </application>
 

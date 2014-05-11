@@ -3,6 +3,10 @@ package com.cnmc.shoppingbuddy;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -10,11 +14,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.cnmc.shoppingbuddy.R;
 
@@ -30,6 +39,8 @@ public class MainActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		System.out.println("On create bundle");
+		Log.i("Bundle", "on create");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.first_activity);
 
@@ -76,21 +87,12 @@ public class MainActivity extends FragmentActivity {
 		if (savedInstanceState == null) {
 			selectItem(0);
 		}
-		
-		android.support.v4.app.FragmentManager myFragmentManager = getSupportFragmentManager();
-        FragmentTransaction tx = myFragmentManager.beginTransaction();
-        tx.replace(R.id.content_frame,Fragment.instantiate(MainActivity.this, "com.cnmc.shoppingbuddy.UserHomeFragment"));
-        tx.commit();
 
-		/*FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction tx = fragmentManager.beginTransaction();
+		android.support.v4.app.FragmentManager myFragmentManager = getSupportFragmentManager();
+		FragmentTransaction tx = myFragmentManager.beginTransaction();
 		tx.replace(R.id.content_frame, Fragment.instantiate(MainActivity.this,
-				"com.cnmc.shoppingbuddy.UserHomeFragment"),
-				"USER_HOME_PAGE_FRAGMENT");
-		// tx.replace(R.id.content_frame,
-		// Fragment.instantiate(MainActivity.this,
-		// "com.cnmc.shoppingbuddy.AddedListDisplayFragment"),"ADDED_LIST_FRAGMENT");
-		tx.commit();*/
+				"com.cnmc.shoppingbuddy.UserHomeFragment"));
+		tx.commit();
 
 	}
 
@@ -99,12 +101,6 @@ public class MainActivity extends FragmentActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.user_action, menu);
 		return true;
-	}
-
-	// Code for Navigation Drawer
-	public void sendMessage(View view) {
-		//Intent intent = new Intent(this, AddItemToListActivity.class);
-		//startActivity(intent);
 	}
 
 	public void selectItem(int possition) {
@@ -119,8 +115,8 @@ public class MainActivity extends FragmentActivity {
 			break;
 		case 1:
 			fragment = new AddedListDisplayFragment();
-			args.putString(AddedListDisplayFragment.TAG, dataList.get(possition)
-					.getItemName());
+			args.putString(AddedListDisplayFragment.TAG, dataList
+					.get(possition).getItemName());
 
 			break;
 		case 2:
@@ -178,18 +174,113 @@ public class MainActivity extends FragmentActivity {
 
 		}
 	}
-	
+
+	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		// Use the Builder class for convenient dialog construction
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.listDialogTitle)
+				.setPositiveButton(R.string.listDialogDone,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+							}
+						})
+				.setNegativeButton(R.string.cancel,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// User cancelled the dialog
+							}
+						});
+		// Create the AlertDialog object and return it
+		return builder.create();
+	}
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		
-	        // Pass the event to ActionBarDrawerToggle, if it returns
-	        // true, then it has handled the app icon touch event
-	        if (mDrawerToggle.onOptionsItemSelected(item)) {
-	          return true;
-	        }
-	        // Handle your other action bar items...
+		Log.i(UserHomeFragment.TAG, "Menu item clicked");
+		// Pass the event to ActionBarDrawerToggle, if it returns
+		// true, then it has handled the app icon touch event
 
-	        return super.onOptionsItemSelected(item);
-	    
+		// Handle your other action bar items...
+		if (item.getItemId() == R.id.add_list) {
+			createDialog().show();
+			System.out.println("add an item");
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	
+	//Magic part :D
+	private Dialog createDialog() {
+
+		View view = LayoutInflater.from(this).inflate(
+				R.layout.list_name_dialog, null);
+		final EditText editText = (EditText) view.findViewById(R.id.editText1);
+		final Spinner prioritySpinner = (Spinner) view.findViewById(R.id.prioritySpinner);
+		prioritySpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int pos, long id) {
+				
+		        String selectedPriority = (parent.getItemAtPosition(pos)).toString();
+				System.out.println("User selected the priority: "+selectedPriority);
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		// Set the dialog title
+		builder.setTitle("Create a New List")
+				// Specify the list array, the items to be selected by default
+				// (null for none),
+				// and the listener through which to receive callbacks when
+				// items are selected
+				.setView(view)
+				// Set the action buttons
+				.setPositiveButton(R.string.ok,
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int id) {
+								// User clicked OK, so save the mSelectedItems
+								// results somewhere
+								// or return them to the component that opened
+								// the dialog
+								
+								String selectedListName = editText.getText().toString();
+								String selectedPriority = prioritySpinner.getSelectedItem().toString();
+								
+								System.out.println("The user entered list name and selected a priority");
+								System.out.println("Printing Edit Text:"
+										+ editText.getText().toString());
+								System.out.println("Printing the priority "+prioritySpinner.getSelectedItem().toString());
+				          	  	System.out.println("starting new activity");
+				          	  	
+				          	  	Intent intent=new Intent(MainActivity.this,AddItemToListActivity.class);
+				          	  	Bundle extras = new Bundle();
+				          	  	extras.putString("priority",selectedPriority);
+				          	  	extras.putString("name",selectedListName);
+				         	  	System.out.println("Added extras successfully");
+				         	  	intent.putExtras(extras);
+				          	  	startActivity(intent);
+								
+							}
+						})
+				.setNegativeButton(R.string.cancel,
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int id) {
+								Log.i("dialog","cancel");
+				            	System.out.println("User clicked cancel on dialog");
+								dialog.dismiss();
+							}
+						});
+
+		return builder.create();
 	}
 }
