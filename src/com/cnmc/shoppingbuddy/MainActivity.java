@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 public class MainActivity extends FragmentActivity {
 	private DrawerLayout mDrawerLayout;

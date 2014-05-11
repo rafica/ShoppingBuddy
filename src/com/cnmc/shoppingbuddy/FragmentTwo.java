@@ -2,7 +2,7 @@ package com.cnmc.shoppingbuddy;
 
 import javax.xml.namespace.QName;
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

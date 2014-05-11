@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.shoppingbuddy.R;
+import com.cnmc.shoppingbuddy.R;
 
 public class AddedListDisplayFragment extends Fragment {
 	private ArrayList<AddedListNameStatus> listNameStatus;
