@@ -199,7 +199,10 @@ public class MainActivity extends FragmentActivity {
 		Log.i(UserHomeFragment.TAG, "Menu item clicked");
 		// Pass the event to ActionBarDrawerToggle, if it returns
 		// true, then it has handled the app icon touch event
-
+		if(mDrawerToggle.onOptionsItemSelected(item))
+		{
+			return true;
+		}
 		// Handle your other action bar items...
 		if (item.getItemId() == R.id.add_list) {
 			createDialog().show();
@@ -210,7 +213,6 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	
-	//Magic part :D
 	private Dialog createDialog() {
 
 		View view = LayoutInflater.from(this).inflate(

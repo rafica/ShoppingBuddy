@@ -88,55 +88,56 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 					
 					
 					
-					String expListStr = _listDataHeader.get(groupPosition);
+					int expListIndex=groupPosition;
+
 				    ArrayList<String> tmp = new ArrayList<String>();
-					switch(expListStr){
+					switch(expListIndex){
 					
-						case "Groceries":
+						case 0:
 							k ="grocery_or_supermarket";
 							break;
 						
-						case "Clothing":
+						case 1:
 							k = "clothing_store";
 							break;
 							
-						case "Electronics":
+						case 2:
 							k = "electronics_store";
 							break;
 							
-						case "Convenience Store":
+						case 3:
 							k = "convenience_store";
 							break;
 							
-						case "Department Store":
+						case 4:
 							k = "department_store";
 							break;
 						
-						case "Furniture Store":
+						case 5:
 							k = "furniture_store";
 							break;
 						
-						case "Health":
+						case 6:
 							k = "health";
 							break;
 						
-						case "Liquor Store":
+						case 7:
 							k ="liquor_store";
 							break;
 						
-						case "Shoe Store":
+						case 8:
 							k = "shoe_store";
 							break;
 							
-						case "Shopping Mall":
+						case 9:
 							k = "shopping_mall";
 							break;
 							
-						case "Veterinary Care":
+						case 10:
 							k = "veterinary_care";
 							break;
 							
-						case "Florist":
+						case 11:
 							k = "florist";
 							break;
 							

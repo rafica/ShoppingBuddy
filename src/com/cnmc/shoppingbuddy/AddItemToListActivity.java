@@ -33,12 +33,6 @@ public class AddItemToListActivity extends FragmentActivity{
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
-		
-		
-
-		
-		
 	}
 
 	@Override
@@ -191,93 +185,93 @@ public class AddItemToListActivity extends FragmentActivity{
 			// Adding child data
 			List<String> groceries = new ArrayList<String>();
 			groceries.add("Custom Item");
-			groceries.add("Groc Item 1");
-			groceries.add("Groc Item 2");
-			groceries.add("Groc Item 3");
-			groceries.add("Groc Item 4");
-			groceries.add("Groc Item 5");
-			groceries.add("Groc Item 6");
-			groceries.add("Groc Item 7");
+			groceries.add("Bread");
+			groceries.add("Butter");
+			groceries.add("Cereal");
+			groceries.add("Milk");
+			groceries.add("Cheese");
+			groceries.add("Pasta");
+			groceries.add("Rice");
 
 			List<String> clothing = new ArrayList<String>();
 			clothing.add("Custom Item");
-			clothing.add("Clothing Item 1");
-			clothing.add("Clothing Item 2");
-			clothing.add("Clothing Item 3");
-			clothing.add("Clothing Item 4");
-			clothing.add("Clothing Item 5");
-			clothing.add("Clothing Item 6");
+			clothing.add("T-shirt");
+			clothing.add("Jeans");
+			clothing.add("Shorts");
+			clothing.add("Skirt");
+			clothing.add("Jacket");
+			clothing.add("Shirt");
 
 			List<String> electronics = new ArrayList<String>();
 			electronics.add("Custom Item");
-			electronics.add("Electronics Item 1");
-			electronics.add("Electronics Item 2");
-			electronics.add("Electronics Item 3");
-			electronics.add("Electronics Item 4");
-			electronics.add("Electronics Item 5");
+			electronics.add("Router");
+			electronics.add("PS2");
+			electronics.add("LED display");
+			electronics.add("mouse");
+			electronics.add("Macbook");
 			
 			
 			List<String> convenience = new ArrayList<String>();
 			convenience.add("Custom Item");
-			convenience.add("Convenience Store Item 1");
-			convenience.add("Convenience Store Item 2");
-			convenience.add("Convenience Store Item 3");
-			convenience.add("Convenience Store Item 4");
+			convenience.add("Water");
+			convenience.add("Candy");
+			convenience.add("Frozen Food");
+			convenience.add("Garbage bags");
 			
 			List<String> department = new ArrayList<String>();
 			department.add("Custom Item");
-			department.add("Department Store Item 1");
-			department.add("Department Store Item 2");
-			department.add("Department Store Item 3");
-			department.add("Department Store Item 4");
+			department.add("Music CD");
+			department.add("Notepad");
+			department.add("Pen");
+			department.add("Toolkit");
 			
 			List<String> furniture = new ArrayList<String>();
 			furniture.add("Custom Item");
-			furniture.add("Furniture Store Item 1");
-			furniture.add("Furniture Store Item 2");
-			furniture.add("Furniture Store Item 3");
-			furniture.add("Furniture Store Item 4");
+			furniture.add("Study Desk");
+			furniture.add("Mattress");
+			furniture.add("Bookshelf");
+			furniture.add("Bed");
 			
 			List<String> health = new ArrayList<String>();
 			health.add("Custom Item");
-			health.add("Health Store Item 1");
-			health.add("Health Store Item 2");
-			health.add("Health Store Item 3");
-			health.add("Health Store Item 4");
+			health.add("Crocin");
+			health.add("Vitamin Supplement");
+			health.add("Calcium Tablets");
+			health.add("Whey Protein");
 			
 			List<String> liquor = new ArrayList<String>();
 			liquor.add("Custom Item");
-			liquor.add("Liquor Store Item 1");
-			liquor.add("Liquor Store Item 2");
-			liquor.add("Liquor Store Item 3");
-			liquor.add("Liquor Store Item 4");
+			liquor.add("Beer");
+			liquor.add("Whisky");
+			liquor.add("Tequilla");
+			liquor.add("Gin");
 			
 			List<String> shoe = new ArrayList<String>();
-			shoe.add("Shoe Store Item 1");
-			shoe.add("Shoe Store Item 2");
-			shoe.add("Shoe Store Item 3");
-			shoe.add("Shoe Store Item 4");
+			shoe.add("Sneakers");
+			shoe.add("Trekking Boots");
+			shoe.add("Running Shoes");
+			shoe.add("Crocs");
 
 			List<String> shoppingmall = new ArrayList<String>();
 			shoppingmall.add("Custom Item");
-			shoppingmall.add("Shopping Mall Item 1");
-			shoppingmall.add("Shopping Mall Item 2");
-			shoppingmall.add("Shopping Mall Item 3");
-			shoppingmall.add("Shopping Mall Item 4");
+			shoppingmall.add("Bedsheets");
+			shoppingmall.add("Perfume");
+			shoppingmall.add("Jewellery");
+			shoppingmall.add("Wallet");
 			
 			List<String> veterinary = new ArrayList<String>();
 			veterinary.add("Custom Item");
-			veterinary.add("Veterinary  Item 1");
-			veterinary.add("Veterinary  Item 2");
-			veterinary.add("Veterinary  Item 3");
-			veterinary.add("Veterinary  Item 4");
+			veterinary.add("Dog Food");
+			veterinary.add("Fish Food");
+			veterinary.add("Hampster treadmill");
+			veterinary.add("Parrot Perch");
 			
 			List<String> florist = new ArrayList<String>();
 			florist.add("Custom Item");
-			florist.add("Florist  Item 1");
-			florist.add("Florist  Item 1");
-			florist.add("Florist  Item 1");
-			florist.add("Florist  Item 1");
+			florist.add("Orchids");
+			florist.add("Roses");
+			florist.add("Cherry Blossom");
+			florist.add("Begonia");
 
 			
 			listCategoryChild.put(listCategoryHeader.get(0), groceries); // Header, Child data
