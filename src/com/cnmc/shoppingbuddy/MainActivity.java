@@ -88,11 +88,11 @@ public class MainActivity extends FragmentActivity {
 			selectItem(0);
 		}
 
-		android.support.v4.app.FragmentManager myFragmentManager = getSupportFragmentManager();
-		FragmentTransaction tx = myFragmentManager.beginTransaction();
-		tx.replace(R.id.content_frame, Fragment.instantiate(MainActivity.this,
-				"com.cnmc.shoppingbuddy.UserHomeFragment"));
-		tx.commit();
+//		android.support.v4.app.FragmentManager myFragmentManager = getSupportFragmentManager();
+//		FragmentTransaction tx = myFragmentManager.beginTransaction();
+//		tx.replace(R.id.content_frame, Fragment.instantiate(MainActivity.this,
+//				"com.cnmc.shoppingbuddy.UserHomeFragment"));
+//		tx.commit();
 
 	}
 
@@ -201,6 +201,12 @@ public class MainActivity extends FragmentActivity {
 		// true, then it has handled the app icon touch event
 
 		// Handle your other action bar items...
+		
+		if(mDrawerToggle.onOptionsItemSelected(item))
+		{
+			return true;
+		}
+				
 		if (item.getItemId() == R.id.add_list) {
 			createDialog().show();
 			System.out.println("add an item");
@@ -210,7 +216,6 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	
-	//Magic part :D
 	private Dialog createDialog() {
 
 		View view = LayoutInflater.from(this).inflate(
